@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/575/trunk/terps/git
+END
+compiler.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/181/trunk/terps/git/compiler.h
+END
+git.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/181/trunk/terps/git/git.c
+END
+saveundo.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/402/trunk/terps/git/saveundo.c
+END
+git_unix.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/325/trunk/terps/git/git_unix.c
+END
+Makefile.win
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/325/trunk/terps/git/Makefile.win
+END
+git.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/575/trunk/terps/git/git.h
+END
+labels.inc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/401/trunk/terps/git/labels.inc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/575/trunk/terps/git/README.txt
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/575/trunk/terps/git/version.h
+END
+opcodes.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/401/trunk/terps/git/opcodes.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/181/trunk/terps/git/Makefile
+END
+git_windows.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/401/trunk/terps/git/git_windows.c
+END
+savefile.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/181/trunk/terps/git/savefile.c
+END
+opcodes.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/401/trunk/terps/git/opcodes.h
+END
+peephole.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/401/trunk/terps/git/peephole.c
+END
+gestalt.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/401/trunk/terps/git/gestalt.c
+END
+git_mac.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/181/trunk/terps/git/git_mac.c
+END
+search.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/181/trunk/terps/git/search.c
+END
+accel.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/401/trunk/terps/git/accel.c
+END
+memory.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/181/trunk/terps/git/memory.c
+END
+terp.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/575/trunk/terps/git/terp.c
+END
+compiler.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/181/trunk/terps/git/compiler.c
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/401/trunk/terps/git/config.h
+END
+operands.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/325/trunk/terps/git/operands.c
+END
+glkop.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/575/trunk/terps/git/glkop.c
+END
+memory.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/181/trunk/terps/git/memory.h
+END
+heap.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/401/trunk/terps/git/heap.c
+END

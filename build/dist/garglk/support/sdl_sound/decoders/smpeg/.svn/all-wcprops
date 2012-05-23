@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/564/trunk/support/sdl_sound/decoders/smpeg
+END
+smpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/564/trunk/support/sdl_sound/decoders/smpeg/smpeg.h
+END
+MPEGfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/564/trunk/support/sdl_sound/decoders/smpeg/MPEGfilter.h
+END

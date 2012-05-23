@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/584/trunk/tads/tads3/include
+END
+tok.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/203/trunk/tads/tads3/include/tok.h
+END
+vector.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/584/trunk/tads/tads3/include/vector.h
+END
+tadsnet.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/tadsnet.h
+END
+strbuf.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/584/trunk/tads/tads3/include/strbuf.h
+END
+dynfunc.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/dynfunc.h
+END
+bytearr.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/bytearr.h
+END
+lookup.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/584/trunk/tads/tads3/include/lookup.h
+END
+httpsrv.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/httpsrv.h
+END
+tadsiox.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/203/trunk/tads/tads3/include/tadsiox.h
+END
+gramprod.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/584/trunk/tads/tads3/include/gramprod.h
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/584/trunk/tads/tads3/include/file.h
+END
+systype.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/systype.h
+END
+bignum.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/584/trunk/tads/tads3/include/bignum.h
+END
+dict.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/584/trunk/tads/tads3/include/dict.h
+END
+tadsio.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/584/trunk/tads/tads3/include/tadsio.h
+END
+reflect.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/203/trunk/tads/tads3/include/reflect.h
+END
+tadsgen.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/tadsgen.h
+END
+t3test.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/203/trunk/tads/tads3/include/t3test.h
+END
+t3.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/584/trunk/tads/tads3/include/t3.h
+END
+httpreq.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/httpreq.h
+END
+strcomp.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/strcomp.h
+END
+charset.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/584/trunk/tads/tads3/include/charset.h
+END
+tads.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/584/trunk/tads/tads3/include/tads.h
+END

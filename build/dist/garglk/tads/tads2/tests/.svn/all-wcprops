@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/203/trunk/tads/tads2/tests
+END
+DSDWALK.IN
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/203/trunk/tads/tads2/tests/DSDWALK.IN
+END
+DDDWALK.IN
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/203/trunk/tads/tads2/tests/DDDWALK.IN
+END
+bugs.log
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/203/trunk/tads/tads2/tests/bugs.log
+END
+BUGS.T
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/203/trunk/tads/tads2/tests/BUGS.T
+END
+BUGS.IN
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/203/trunk/tads/tads2/tests/BUGS.IN
+END
+DSDWALK.LOG
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/203/trunk/tads/tads2/tests/DSDWALK.LOG
+END
+DDDWALK.LOG
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/203/trunk/tads/tads2/tests/DDDWALK.LOG
+END

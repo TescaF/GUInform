@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/584/trunk/tads/tads3/lib/extensions
+END
+combineReports.t
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/584/trunk/tads/tads3/lib/extensions/combineReports.t
+END
+newNames.t
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/584/trunk/tads/tads3/lib/extensions/newNames.t
+END
+pathfind.t
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/pathfind.t
+END
+CustomStatus.t
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/CustomStatus.t
+END
+customBanner.t
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/customBanner.t
+END
+smartAccompany.t
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/584/trunk/tads/tads3/lib/extensions/smartAccompany.t
+END
+OpenState.t
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/584/trunk/tads/tads3/lib/extensions/OpenState.t
+END
+SimpleAttachable.t
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/SimpleAttachable.t
+END
+cquotes.t
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/cquotes.t
+END
+custmsg.t
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/custmsg.t
+END
+subtime.t
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/subtime.t
+END
+showTranscript.t
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/203/trunk/tads/tads3/lib/extensions/showTranscript.t
+END

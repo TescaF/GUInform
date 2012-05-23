@@ -1326,9 +1326,21 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
  * Graphics and Image drawing
  */
 
-glui32 glk_svg_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
+glui32 glk_svg_draw(winid_t win, glui32 text, glsi32 val1, glsi32 val2)
 {
-    printf("in svg draw function\n");
+    printf("passed text to GLK function: ");
+   // printf(text);
+   // printf("\n");
+    switch (win->type)
+    {
+        case wintype_TextBuffer:
+            win_textbuffer_putchar_uni(win, text);
+            break;
+        case wintype_TextGrid:
+            win_textgrid_putchar_uni(win, text);
+            break;
+    }
+
     return FALSE;
 }
 

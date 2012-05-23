@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/596/trunk/terps/bocfel
+END
+process.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/555/trunk/terps/bocfel/process.h
+END
+zoom.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/596/trunk/terps/bocfel/zoom.c
+END
+random.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/505/trunk/terps/bocfel/random.h
+END
+unicode.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/596/trunk/terps/bocfel/unicode.c
+END
+objects.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/596/trunk/terps/bocfel/objects.c
+END
+zoom.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/500/trunk/terps/bocfel/zoom.h
+END
+unicode.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/596/trunk/terps/bocfel/unicode.h
+END
+glkstart.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/596/trunk/terps/bocfel/glkstart.c
+END
+branch.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/596/trunk/terps/bocfel/branch.c
+END
+objects.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/500/trunk/terps/bocfel/objects.h
+END
+blorb.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/596/trunk/terps/bocfel/blorb.c
+END
+branch.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/500/trunk/terps/bocfel/branch.h
+END
+blorb.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/518/trunk/terps/bocfel/blorb.h
+END
+io.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/596/trunk/terps/bocfel/io.c
+END
+osdep.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/596/trunk/terps/bocfel/osdep.c
+END
+io.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/549/trunk/terps/bocfel/io.h
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/596/trunk/terps/bocfel/util.c
+END
+screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/596/trunk/terps/bocfel/screen.c
+END
+osdep.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/555/trunk/terps/bocfel/osdep.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/596/trunk/terps/bocfel/util.h
+END
+dict.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/596/trunk/terps/bocfel/dict.c
+END
+screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/555/trunk/terps/bocfel/screen.h
+END
+table.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/596/trunk/terps/bocfel/table.c
+END
+dict.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/500/trunk/terps/bocfel/dict.h
+END
+math.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/596/trunk/terps/bocfel/math.c
+END
+table.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/500/trunk/terps/bocfel/table.h
+END
+math.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/500/trunk/terps/bocfel/math.h
+END
+zterp.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/596/trunk/terps/bocfel/zterp.c
+END
+iff.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/596/trunk/terps/bocfel/iff.c
+END
+stack.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/596/trunk/terps/bocfel/stack.c
+END
+memory.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/596/trunk/terps/bocfel/memory.c
+END
+iff.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/500/trunk/terps/bocfel/iff.h
+END
+zterp.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/555/trunk/terps/bocfel/zterp.h
+END
+stack.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/555/trunk/terps/bocfel/stack.h
+END
+BUILDING
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/596/trunk/terps/bocfel/BUILDING
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/500/trunk/terps/bocfel/README
+END
+memory.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/555/trunk/terps/bocfel/memory.h
+END
+process.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/596/trunk/terps/bocfel/process.c
+END
+COPYING.GPLv2
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/596/trunk/terps/bocfel/COPYING.GPLv2
+END
+random.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/596/trunk/terps/bocfel/random.c
+END
+COPYING.GPLv3
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/596/trunk/terps/bocfel/COPYING.GPLv3
+END

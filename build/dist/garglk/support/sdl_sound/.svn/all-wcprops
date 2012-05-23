@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/564/trunk/support/sdl_sound
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/trunk/support/sdl_sound/TODO
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/272/trunk/support/sdl_sound/INSTALL
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/272/trunk/support/sdl_sound/COPYING
+END
+SDL_sound.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/564/trunk/support/sdl_sound/SDL_sound.c
+END
+SDL_sound_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/564/trunk/support/sdl_sound/SDL_sound_internal.h
+END
+SDL_sound.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/564/trunk/support/sdl_sound/SDL_sound.h
+END
+audio_convert.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/564/trunk/support/sdl_sound/audio_convert.c
+END
+alt_audio_convert.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/564/trunk/support/sdl_sound/alt_audio_convert.c
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/272/trunk/support/sdl_sound/CHANGELOG
+END
+alt_audio_convert.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/564/trunk/support/sdl_sound/alt_audio_convert.h
+END
+filter_templates.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/564/trunk/support/sdl_sound/filter_templates.h
+END
+CREDITS
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/272/trunk/support/sdl_sound/CREDITS
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/272/trunk/support/sdl_sound/README
+END
+extra_rwops.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/564/trunk/support/sdl_sound/extra_rwops.c
+END
+extra_rwops.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/564/trunk/support/sdl_sound/extra_rwops.h
+END

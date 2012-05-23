@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/564/trunk/terps/magnetic/Glk
+END
+magnetic.hdr
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/55/trunk/terps/magnetic/Glk/magnetic.hdr
+END
+glk_readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/55/trunk/terps/magnetic/Glk/glk_readme.txt
+END
+Makefile.glk
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/55/trunk/terps/magnetic/Glk/Makefile.glk
+END
+glk.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/564/trunk/terps/magnetic/Glk/glk.c
+END

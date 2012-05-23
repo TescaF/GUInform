@@ -1,0 +1,485 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/599/trunk/garglk
+END
+docu2.ico
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/trunk/garglk/docu2.ico
+END
+cgmisc.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/532/trunk/garglk/cgmisc.c
+END
+LuxiMono.txt
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/474/trunk/garglk/LuxiMono.txt
+END
+imgnull.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/imgnull.c
+END
+winmask.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/winmask.c
+END
+launcher.plist
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/535/trunk/garglk/launcher.plist
+END
+house.ico
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/trunk/garglk/house.ico
+END
+fontgtk.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/fontgtk.c
+END
+lmb.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/lmb.hex
+END
+imgload.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/553/trunk/garglk/imgload.c
+END
+garglk.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/599/trunk/garglk/garglk.h
+END
+launchmac.nib
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/345/trunk/garglk/launchmac.nib
+END
+event.c
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/598/trunk/garglk/event.c
+END
+lmi.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/lmi.hex
+END
+imgscale.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/474/trunk/garglk/imgscale.c
+END
+docu2.icns
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/303/trunk/garglk/docu2.icns
+END
+ttswin.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/474/trunk/garglk/ttswin.c
+END
+glkstart.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/474/trunk/garglk/glkstart.c
+END
+cgfref.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/581/trunk/garglk/cgfref.c
+END
+lmr.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/lmr.hex
+END
+glkstart.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/474/trunk/garglk/glkstart.h
+END
+launcher.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/527/trunk/garglk/launcher.c
+END
+wingfx.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/474/trunk/garglk/wingfx.c
+END
+wintext.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/599/trunk/garglk/wintext.c
+END
+lmz.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/lmz.hex
+END
+launchmac.m
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/534/trunk/garglk/launchmac.m
+END
+winblank.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/474/trunk/garglk/winblank.c
+END
+launcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/523/trunk/garglk/launcher.h
+END
+sysmac.m
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/561/trunk/garglk/sysmac.m
+END
+tags
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/474/trunk/garglk/tags
+END
+gi_blorb.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/501/trunk/garglk/gi_blorb.c
+END
+sndnull.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/597/trunk/garglk/sndnull.c
+END
+glk.h
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/571/trunk/garglk/glk.h
+END
+fontwin.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/fontwin.c
+END
+gi_blorb.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/501/trunk/garglk/gi_blorb.h
+END
+Jamfile
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/588/trunk/garglk/Jamfile
+END
+cgdate.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/553/trunk/garglk/cgdate.c
+END
+sndfmod.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/sndfmod.c
+END
+cgunigen.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/496/trunk/garglk/cgunigen.c
+END
+fontdata.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/474/trunk/garglk/fontdata.c
+END
+gargoyle.desktop
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/492/trunk/garglk/gargoyle.desktop
+END
+launchefl.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/523/trunk/garglk/launchefl.c
+END
+uthash.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/474/trunk/garglk/uthash.h
+END
+wingrid.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/598/trunk/garglk/wingrid.c
+END
+sysefl.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/544/trunk/garglk/sysefl.c
+END
+window.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/496/trunk/garglk/window.c
+END
+cgstyle.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/475/trunk/garglk/cgstyle.c
+END
+gi_dispa.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/571/trunk/garglk/gi_dispa.c
+END
+launchgtk.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/569/trunk/garglk/launchgtk.c
+END
+nohyper.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/nohyper.c
+END
+sysgtk.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/586/trunk/garglk/sysgtk.c
+END
+gi_dispa.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/501/trunk/garglk/gi_dispa.h
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/474/trunk/garglk/TODO
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/474/trunk/garglk/main.c
+END
+gargoyle-docu2.png
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/450/trunk/garglk/gargoyle-docu2.png
+END
+sndsdl.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/571/trunk/garglk/sndsdl.c
+END
+cbb.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/cbb.hex
+END
+gargoyle-house.png
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/450/trunk/garglk/gargoyle-house.png
+END
+icons.rc
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/474/trunk/garglk/icons.rc
+END
+cbi.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/cbi.hex
+END
+fontmac.m
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/fontmac.m
+END
+garglk.ini
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/599/trunk/garglk/garglk.ini
+END
+config.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/599/trunk/garglk/config.c
+END
+cgstream.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/566/trunk/garglk/cgstream.c
+END
+launcheoi.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/523/trunk/garglk/launcheoi.c
+END
+cbr.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/cbr.hex
+END
+winpair.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/496/trunk/garglk/winpair.c
+END
+cgblorb.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/474/trunk/garglk/cgblorb.c
+END
+syseoi.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/550/trunk/garglk/syseoi.c
+END
+cbz.hex
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/474/trunk/garglk/cbz.hex
+END
+garversion.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/485/trunk/garglk/garversion.h
+END
+standalone.ini
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/526/trunk/garglk/standalone.ini
+END
+launchwin.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/509/trunk/garglk/launchwin.c
+END
+launcher.sh
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/474/trunk/garglk/launcher.sh
+END
+cggestal.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/571/trunk/garglk/cggestal.c
+END
+cgunicod.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/497/trunk/garglk/cgunicod.c
+END
+syswin.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/539/trunk/garglk/syswin.c
+END
+draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/523/trunk/garglk/draw.c
+END
+house.icns
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/303/trunk/garglk/house.icns
+END
+babeldata.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/532/trunk/garglk/babeldata.c
+END

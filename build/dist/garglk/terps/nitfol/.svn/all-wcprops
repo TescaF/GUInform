@@ -1,0 +1,623 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/571/trunk/terps/nitfol
+END
+no_blorb.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/no_blorb.c
+END
+graphics.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/graphics.c
+END
+glkstart.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/glkstart.h
+END
+portfunc.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/564/trunk/terps/nitfol/portfunc.c
+END
+no_blorb.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/no_blorb.h
+END
+errmesg.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/errmesg.c
+END
+portfunc.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/portfunc.h
+END
+graphics.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/graphics.h
+END
+stack.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/nitfol/stack.c
+END
+io.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/564/trunk/terps/nitfol/io.c
+END
+copying.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/copying.c
+END
+errmesg.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/errmesg.h
+END
+stack.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/stack.h
+END
+tags
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/trunk/terps/nitfol/tags
+END
+copying.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/copying.h
+END
+nitfol.6
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/nitfol.6
+END
+opt2glkc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/564/trunk/terps/nitfol/opt2glkc.pl
+END
+options.texi
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/terps/nitfol/options.texi
+END
+gi_blorb.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/gi_blorb.h
+END
+debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/nitfol/debug.c
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/COPYING
+END
+op_math.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/op_math.c
+END
+solve.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/nitfol/solve.c
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/debug.h
+END
+dbg_help.texi
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/terps/nitfol/dbg_help.texi
+END
+op_math.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/op_math.h
+END
+solve.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/solve.h
+END
+blorb.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/blorb.c
+END
+z_io.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/564/trunk/terps/nitfol/z_io.c
+END
+startdos.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/343/trunk/terps/nitfol/startdos.c
+END
+nitfol.info
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/nitfol/nitfol.info
+END
+z_io.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/z_io.h
+END
+undo.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/564/trunk/terps/nitfol/undo.c
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/ChangeLog
+END
+dbg_help.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/dbg_help.h
+END
+undo.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/undo.h
+END
+startwin.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/343/trunk/terps/nitfol/startwin.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/README
+END
+nitfol.html
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/nitfol/nitfol.html
+END
+no_snd.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/no_snd.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/564/trunk/terps/nitfol/main.c
+END
+struct.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/564/trunk/terps/nitfol/struct.c
+END
+no_snd.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/no_snd.h
+END
+op_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/564/trunk/terps/nitfol/op_table.c
+END
+op_v6.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/nitfol/op_v6.c
+END
+struct.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/struct.h
+END
+main.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/main.h
+END
+nio.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/terps/nitfol/nio.h
+END
+inform.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/564/trunk/terps/nitfol/inform.c
+END
+op_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/op_table.h
+END
+y2help.pl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/y2help.pl
+END
+no_graph.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/no_graph.c
+END
+op_v6.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/op_v6.h
+END
+inform.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/inform.h
+END
+nitfol.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/564/trunk/terps/nitfol/nitfol.h
+END
+startunix.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/343/trunk/terps/nitfol/startunix.c
+END
+no_graph.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/no_graph.h
+END
+init.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/564/trunk/terps/nitfol/init.c
+END
+iff.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/564/trunk/terps/nitfol/iff.c
+END
+rg_qsort.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/rg_qsort.h
+END
+copying.awk
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/nitfol/copying.awk
+END
+init.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/init.h
+END
+op_call.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/op_call.c
+END
+iff.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/terps/nitfol/iff.h
+END
+test.inf
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/test.inf
+END
+crashme.inf
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/nitfol/crashme.inf
+END
+infix.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/nitfol/infix.c
+END
+startmac.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/startmac.c
+END
+op_call.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/op_call.h
+END
+inform.hhh
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/inform.hhh
+END
+inform.y
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/inform.y
+END
+glk.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/571/trunk/terps/nitfol/glk.h
+END
+nitfol.texi
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/nitfol/nitfol.texi
+END
+infix.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/infix.h
+END
+hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/hash.c
+END
+decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/564/trunk/terps/nitfol/decode.c
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/INSTALL
+END
+quetzal.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/quetzal.c
+END
+hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/hash.h
+END
+decode.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/decode.h
+END
+sound.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/nitfol/sound.c
+END
+binary.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/binary.h
+END
+objects.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/objects.c
+END
+quetzal.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/quetzal.h
+END
+op_save.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/op_save.c
+END
+sound.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/sound.h
+END
+objects.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/objects.h
+END
+op_save.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/op_save.h
+END
+automap.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/automap.c
+END
+oplist.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/564/trunk/terps/nitfol/oplist.c
+END
+nitfol
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/terps/nitfol/nitfol
+END
+nitfol.opt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/343/trunk/terps/nitfol/nitfol.opt
+END
+automap.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/automap.h
+END
+oplist.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/oplist.h
+END
+tokenise.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/564/trunk/terps/nitfol/tokenise.c
+END
+zscii.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/nitfol/zscii.c
+END
+linkevil.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/564/trunk/terps/nitfol/linkevil.h
+END
+globals.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/nitfol/globals.c
+END
+op_jmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/564/trunk/terps/nitfol/op_jmp.c
+END
+tokenise.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/nitfol/tokenise.h
+END
+zscii.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/nitfol/zscii.h
+END
+globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/nitfol/globals.h
+END
+op_jmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/terps/nitfol/op_jmp.h
+END

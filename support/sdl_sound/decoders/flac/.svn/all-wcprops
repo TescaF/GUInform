@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac
+END
+ordinals.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/ordinals.h
+END
+callback.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/callback.h
+END
+stream_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/stream_decoder.h
+END
+metadata.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/metadata.h
+END
+libFLAC.dll
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/libFLAC.dll
+END
+assert.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/assert.h
+END
+export.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/export.h
+END
+all.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/all.h
+END
+format.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/format.h
+END
+stream_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/flac/stream_encoder.h
+END

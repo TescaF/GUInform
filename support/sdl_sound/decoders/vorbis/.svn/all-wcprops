@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/vorbis
+END
+vorbisfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/vorbis/vorbisfile.h
+END
+codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/272/trunk/support/sdl_sound/decoders/vorbis/codec.h
+END

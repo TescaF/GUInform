@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/564/trunk/terps/agility
+END
+exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/agility/exec.c
+END
+metacommand.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/terps/agility/metacommand.c
+END
+os_dos.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/agility/os_dos.c
+END
+savegame.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/agility/savegame.c
+END
+exec.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/agility/exec.h
+END
+Makefile.linux
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/terps/agility/Makefile.linux
+END
+disassemble.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/terps/agility/disassemble.c
+END
+parser.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/agility/parser.c
+END
+auxfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/agility/auxfile.c
+END
+Makefile.plain
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/terps/agility/Makefile.plain
+END
+os_none.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/agility/os_none.c
+END
+readme.dos
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/agility/readme.dos
+END
+GPL
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/trunk/terps/agility/GPL
+END
+gamedata.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/agility/gamedata.c
+END
+interp.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/agility/interp.h
+END
+object.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/terps/agility/object.c
+END
+agtread.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/199/trunk/terps/agility/agtread.c
+END
+agility.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/564/trunk/terps/agility/agility.h
+END
+Makefile.glk
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/terps/agility/Makefile.glk
+END
+debugcmd.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/agility/debugcmd.c
+END
+readme.linux
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/terps/agility/readme.linux
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/435/trunk/terps/agility/config.h
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/terps/agility/util.c
+END
+os_glk.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/564/trunk/terps/agility/os_glk.c
+END
+porting.txt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/terps/agility/porting.txt
+END
+token.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/199/trunk/terps/agility/token.c
+END
+runverb.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/agility/runverb.c
+END
+readme.glk
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/429/trunk/terps/agility/readme.glk
+END
+os_termcap.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/terps/agility/os_termcap.c
+END
+linux_pict
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/agility/linux_pict
+END
+agt2agx.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/terps/agility/agt2agx.c
+END
+agility.hdr
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/terps/agility/agility.hdr
+END
+interface.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/199/trunk/terps/agility/interface.c
+END
+agtout.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/37/trunk/terps/agility/agtout.c
+END
+os_curses.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/terps/agility/os_curses.c
+END
+changes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/terps/agility/changes.txt
+END
+agilstub.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/agility/agilstub.c
+END
+agil.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/564/trunk/terps/agility/agil.c
+END
+readme.agility
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/terps/agility/readme.agility
+END
+agxfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/37/trunk/terps/agility/agxfile.c
+END
+Makefile.dos
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/terps/agility/Makefile.dos
+END
+filename.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/terps/agility/filename.c
+END

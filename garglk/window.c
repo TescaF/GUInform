@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <cairo.h>
 #include "glk.h"
 #include "garglk.h"
 
@@ -1325,26 +1326,9 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
  * Graphics and Image drawing
  */
 
-glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
+glui32 glk_svg_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
 {
-    if (!win)
-    {
-        gli_strict_warning("image_draw: invalid ref");
-        return FALSE;
-    }
-
-    if (!gli_conf_graphics)
-        return FALSE;
-
-    switch (win->type)
-    {
-        case wintype_TextBuffer:
-            return win_textbuffer_draw_picture(win->data, image, val1,
-                    FALSE, 0, 0);
-        case wintype_Graphics:
-            return win_graphics_draw_picture(win->data, image, val1, val2,
-                    FALSE, 0, 0);
-    }
+    printf("in svg draw function\n");
     return FALSE;
 }
 

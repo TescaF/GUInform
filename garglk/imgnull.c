@@ -33,6 +33,11 @@ glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
     return FALSE;
 }
 
+glui32 glk_svg_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
+{
+    return FALSE;
+}
+
 glui32 glk_image_draw_scaled(winid_t win, glui32 image,
     glsi32 val1, glsi32 val2, glui32 width, glui32 height)
 {

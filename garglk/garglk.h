@@ -708,11 +708,15 @@ void win_graphics_click(window_graphics_t *dwin, int x, int y);
 glui32 win_graphics_draw_picture(window_graphics_t *cutwin,
   glui32 image, glsi32 xpos, glsi32 ypos,
   int scale, glui32 imagewidth, glui32 imageheight);
+glui32 win_graphics_draw_svg(window_graphics_t *cutwin,
+  glui32 image, glsi32 xpos, glsi32 ypos,
+  int scale, glui32 imagewidth, glui32 imageheight);
 void win_graphics_erase_rect(window_graphics_t *cutwin, int whole, glsi32 xpos, glsi32 ypos, glui32 width, glui32 height);
 void win_graphics_fill_rect(window_graphics_t *cutwin, glui32 color, glsi32 xpos, glsi32 ypos, glui32 width, glui32 height);
 void win_graphics_set_background_color(window_graphics_t *cutwin, glui32 color);
 
 glui32 win_textbuffer_draw_picture(window_textbuffer_t *dwin, glui32 image, glui32 align, glui32 scaled, glui32 width, glui32 height);
+glui32 win_textbuffer_draw_svg(window_textbuffer_t *dwin, glui32 image, glui32 align, glui32 scaled, glui32 width, glui32 height);
 glui32 win_textbuffer_flow_break(window_textbuffer_t *win);
 
 void gli_calc_padding(window_t *win, int *x, int *y);

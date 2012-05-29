@@ -1332,6 +1332,29 @@ glui32 glk_svg_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
     return FALSE;
 }
 
+glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
+{
+    if (!win)
+    {
+        gli_strict_warning("image_draw: invalid ref");
+        return FALSE;
+    }
+
+    if (!gli_conf_graphics)
+        return FALSE;
+
+    switch (win->type)
+    {
+        case wintype_TextBuffer:
+            return win_textbuffer_draw_picture(win->data, image, val1,
+                    FALSE, 0, 0);
+        case wintype_Graphics:
+            return win_graphics_draw_picture(win->data, image, val1, val2,
+                    FALSE, 0, 0);
+    }
+    return FALSE;
+}
+
 glui32 glk_image_draw_scaled(winid_t win, glui32 image,
         glsi32 val1, glsi32 val2, glui32 width, glui32 height)
 {

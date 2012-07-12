@@ -526,7 +526,7 @@ char *gidispatch_prototype(glui32 funcnum)
         case 0x00E2: /* image_draw_scaled */
             return "7QaIuIsIsIuIu:Iu";
         case 0x00E3: /* SVG_draw */
-            return "5QaSIsIs:Iu";
+            return "2QaS:";
         case 0x00E8: /* window_flow_break */
             return "1Qa:";
         case 0x00E9: /* window_erase_rect */
@@ -1057,9 +1057,9 @@ void gidispatch_call(glui32 funcnum, glui32 numargs, gluniversal_t *arglist)
                 arglist[4].uint, arglist[5].uint);
             break;
         case 0x00E3: /* svg_draw */
-            arglist[5].uint = glk_svg_draw(arglist[0].opaqueref,
-                arglist[1].uint,
-                arglist[2].sint, arglist[3].sint);
+            glk_svg_draw(arglist[0].opaqueref,
+                arglist[1].charstr
+                );
             break;
         case 0x00E8: /* window_flow_break */
             glk_window_flow_break(arglist[0].opaqueref);

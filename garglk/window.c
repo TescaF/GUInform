@@ -1326,10 +1326,17 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
  * Graphics and Image drawing
  */
 
-glui32 glk_svg_draw(winid_t win, char* svg_string)
+glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
 {
-    printf("passed text to GLK function: %s\n", svg_string);
-    //printf("first char: %c\n", svg_string[0]);
+    glui32 *ch;
+    glui32 lx;
+    int len;
+    len = strlen_uni(svg_string);
+    char cstr[len];
+
+    for (lx=0, ch=svg_string; lx<len; lx++, ch++)
+ 	cstr[lx] = *ch;
+    printf("passed text to GLK function: %s\n", cstr);
 }
 
 glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)

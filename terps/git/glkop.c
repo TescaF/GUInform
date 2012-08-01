@@ -496,8 +496,9 @@ static void prepare_glk_args(char *proto, dispatch_splot_t *splot)
     }
   }
 
-  if (*cx != ':' && *cx != '\0')
+  if (*cx != ':' && *cx != '\0') {
     fatalError("Illegal format string.");
+  }
 
   splot->maxargs = maxargs;
 

@@ -824,7 +824,7 @@ static void gli_put_buffer_uni(stream_t *str, glui32 *buf, glui32 len)
     switch (str->type)
     {
         case strtype_Memory:
-            if (str->bufptr >= str->bufend)
+           if (str->bufptr >= str->bufend)
             {
                 len = 0;
             }
@@ -895,7 +895,7 @@ static void gli_put_buffer_uni(stream_t *str, glui32 *buf, glui32 len)
             }
             for (lx=0, cx=buf; lx<len; lx++, cx++)
                 gli_window_put_char_uni(str->win, *cx);
-            if (str->win->echostr)
+            if (str->win->echostr) 
                 gli_put_buffer_uni(str->win->echostr, buf, len);
             break;
         case strtype_File:

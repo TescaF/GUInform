@@ -83,9 +83,9 @@ switch $(OS)
     case LINUX :
         Echo "OS is LINUX ($(GUILIB))" ;
         if $(GUILIB) = EFL {
-            PKGCONFIG = "pkg-config freetype2 evas ecore ecore-evas elementary fontconfig" ;
+            PKGCONFIG = "pkg-config freetype2 evas ecore ecore-evas elementary fontconfig librsvg-2.0 cairo-png" ;
         } else {
-            PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig" ;
+            PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig librsvg-2.0 cairo-png" ;
         }
         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
         GARGLKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;

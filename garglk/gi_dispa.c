@@ -526,7 +526,7 @@ char *gidispatch_prototype(glui32 funcnum)
         case 0x00E2: /* image_draw_scaled */
             return "7QaIuIsIsIuIu:Iu";
         case 0x00E3: /* svg_draw */
-            return "2QaS:";
+            return "3QaIu>+#CnIu:";
         case 0x00E8: /* window_flow_break */
             return "1Qa:";
         case 0x00E9: /* window_erase_rect */

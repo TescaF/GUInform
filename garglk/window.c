@@ -1331,17 +1331,22 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
 glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
 {
     glui32 *ch;
-    glui32 lx;
-    int len;
-    len = strlen_uni(svg_string);
-    char cstr[len];
+    int lx;
+    int len = strlen_uni(svg_string);
+    char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
+    char svgFooter [] = "</svg>";
+    char cstr[len + 1];
+    char finalStr[len + strlen(svgHeader) + strlen(svgFooter)];
 
+    strcpy(finalStr, svgHeader);
     for (lx=0, ch=svg_string; lx<len; lx++, ch++)
  	cstr[lx] = *ch;
-    printf("passed text to GLK function: %s\n", cstr);
-    printf("string length: %i\n", strlen(cstr));
-    glk_svg_to_png(cstr, "/home/tesca/Documents/ThesisProject/test.png");
-    printf("called svg function\n");
+    cstr[lx + 1] = '\0';
+    strcat(finalStr, cstr);
+    strcat(finalStr, svgFooter);
+    printf("passed text to GLK function: %s\n", finalStr);
+    //I'll change the line below to a relative path once I know where the file needs to go
+    glk_svg_to_png(finalStr, "/home/tesca/Documents/ThesisProject/guinform-svg/svg_result.png");
 }
 #define FAIL(msg)							\
     do { fprintf (stderr, "FAIL: %s\n", msg); exit (-1); } while (0)
@@ -1350,48 +1355,29 @@ glui32 glk_svg_to_png(char *svg_string, char *file_name) {
     GError *error = NULL;
     RsvgHandle *handle;
     RsvgDimensionData dim;
-    double width, height;
-    const char *filename = svg_string;
-    const char *output_filename = file_name;
     cairo_surface_t *surface;
     cairo_t *cr;
     cairo_status_t status;
     guchar *buf = (guchar*) svg_string;
 
     g_type_init ();
-printf("step 1\n");
     rsvg_set_default_dpi (72.0);
- //   handle = rsvg_handle_new_from_file (svg_string, &error);
     handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
-
     if(error != NULL)
       FAIL (error->message);     
-printf("step 2\n");
 
     rsvg_handle_get_dimensions (handle, &dim);
-    width = dim.width;
-    height = dim.height;
-printf("step 3\n");
-
-    surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, width, height);
+    surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);
     cr = cairo_create (surface);
-printf("step 4\n");
 
     rsvg_handle_render_cairo (handle, cr);
-printf("step 5\n");
-
     status = cairo_status (cr);
     if (status)
 	FAIL (cairo_status_to_string (status));
-printf("step 6\n");
 
-    cairo_surface_write_to_png (surface, output_filename);
-printf("step 7\n");
-
+    cairo_surface_write_to_png (surface, file_name);
     cairo_destroy (cr);
     cairo_surface_destroy (surface);
-printf("step 8\n");
-
     return FALSE;
 }
 

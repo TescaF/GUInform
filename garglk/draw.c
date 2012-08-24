@@ -482,8 +482,8 @@ void gli_draw_pixel_lcd(int x, int y, unsigned char *alpha, unsigned char *rgb)
 #endif
 }
 
-
-static inline void draw_bitmap(bitmap_t *b, int x, int y, unsigned char *rgb)
+//static inline void draw_bitmap(bitmap_t *b, int x, int y, unsigned char *rgb)
+void draw_bitmap(bitmap_t *b, int x, int y, unsigned char *rgb)
 {
     int i, k, c;
     for (k = 0; k < b->h; k++)
@@ -496,9 +496,11 @@ static inline void draw_bitmap(bitmap_t *b, int x, int y, unsigned char *rgb)
     }
 }
 
-static inline void draw_bitmap_lcd(bitmap_t *b, int x, int y, unsigned char *rgb)
+//static inline void draw_bitmap_lcd(bitmap_t *b, int x, int y, unsigned char *rgb)
+void draw_bitmap_lcd(bitmap_t *b, int x, int y, unsigned char *rgb)
 {
     int i, j, k;
+    printf("bitmap: %u  x: %i  y: %i\n", b->data, x, y);
     for (k = 0; k < b->h; k++)
     {
         for (i = 0, j = 0; i < b->w; i += 3, j ++)

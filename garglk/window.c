@@ -33,6 +33,14 @@
 #define LINES 24
 #define COLS 70
 
+typedef struct bitmap_s bitmap_t;
+
+struct bitmap_s
+{
+    int w, h, lsb, top, pitch;
+    unsigned char *data;
+};
+
 int gli_force_redraw = 1;
 int gli_more_focus = 0;
 
@@ -1352,6 +1360,8 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
     do { fprintf (stderr, "FAIL: %s\n", msg); exit (-1); } while (0)
 
 glui32 glk_svg_to_png(char *svg_string, char *file_name) {
+    bitmap_t rendered_bitmap;
+    unsigned char* color;
     GError *error = NULL;
     RsvgHandle *handle;
     RsvgDimensionData dim;
@@ -1375,6 +1385,16 @@ glui32 glk_svg_to_png(char *svg_string, char *file_name) {
     if (status)
 	FAIL (cairo_status_to_string (status));
 
+    cairo_surface_flush(surface);
+    rendered_bitmap.lsb = 0;
+    rendered_bitmap.top = 0;
+    rendered_bitmap.w = dim.width;
+    rendered_bitmap.h = dim.height;
+    rendered_bitmap.pitch = 0;
+    rendered_bitmap.data = cairo_image_surface_get_data(surface);
+    printf("before draw_bitmap call\n");
+    draw_bitmap_lcd(&rendered_bitmap, 0, 0, gli_window_color);
+    printf("after draw_bitmap call\n");
     cairo_surface_write_to_png (surface, file_name);
     cairo_destroy (cr);
     cairo_surface_destroy (surface);

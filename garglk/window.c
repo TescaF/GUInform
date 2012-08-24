@@ -1361,13 +1361,16 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     pic->rgba = malloc(rgbaSize);
     assert(pic->rgba);
     memcpy(pic->rgba, cairo_image_surface_get_data(surface), rgbaSize);
-#if 0
-    draw_bitmap_lcd(&rendered_bitmap, 0, 0, gli_window_color);
-#endif
-    pic->id = 0;   // XXX Is this OK?
+    pic->id = 0; //**may need to change this in the future, but it works for now**
     pic->scaled = 0;
     cairo_destroy (cr);
     cairo_surface_destroy (surface);
+
+    pic->rgba = NULL;
+    free(pic->rgba);
+    pic = NULL;
+    free(pic);
+
     return pic;
 }
 
@@ -1383,6 +1386,9 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
     char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
     char svgFooter [] = "</svg>";
     char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
+    picture_t *renderedPic;
+    glui32 hyperlink;
+    window_textbuffer_t *textbufWindow = win->data;
 
     while(svgBodyLen--)
         *svgBodyP++ = *svg_string++;
@@ -1391,9 +1397,10 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
     strcpy(svg, svgHeader);
     strcat(svg, svgBody);
     strcat(svg, svgFooter);
-    /* pic = */ glk_svg_to_pic(win, svg);
-    // Now we take the pic returned by the call above (not shown)
-    // and render it (also not shown).
+
+    renderedPic = glk_svg_to_pic(win, svg);
+    hyperlink = textbufWindow->owner->attr.hyper;
+    put_picture(textbufWindow, renderedPic, imagealign_InlineCenter, hyperlink);
     return FALSE;
 }
 

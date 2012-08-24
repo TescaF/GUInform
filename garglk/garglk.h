@@ -591,6 +591,7 @@ extern void gcmd_grid_accept_readchar(window_t *win, glui32 arg);
 extern void gcmd_grid_accept_readline(window_t *win, glui32 arg);
 
 extern window_textbuffer_t *win_textbuffer_create(window_t *win);
+extern glui32 put_picture(window_textbuffer_t *dwin, picture_t *pic, glui32 align, glui32 linkval);
 extern void win_textbuffer_destroy(window_textbuffer_t *dwin);
 extern void win_textbuffer_rearrange(window_t *win, rect_t *box);
 extern void win_textbuffer_redraw(window_t *win);

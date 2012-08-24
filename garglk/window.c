@@ -1365,12 +1365,6 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     pic->scaled = 0;
     cairo_destroy (cr);
     cairo_surface_destroy (surface);
-
-    pic->rgba = NULL;
-    free(pic->rgba);
-    pic = NULL;
-    free(pic);
-
     return pic;
 }
 

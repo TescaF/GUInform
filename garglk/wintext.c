@@ -37,8 +37,6 @@ static void
 put_text(window_textbuffer_t *dwin, char *buf, int len, int pos, int oldlen);
 static void
 put_text_uni(window_textbuffer_t *dwin, glui32 *buf, int len, int pos, int oldlen);
-//static glui32
-//put_picture(window_textbuffer_t *dwin, picture_t *pic, glui32 align, glui32 linkval);
 
 static void touch(window_textbuffer_t *dwin, int line)
 {

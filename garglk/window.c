@@ -1325,6 +1325,10 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
     }
 }
 
+/*
+* Graphics and Image drawing
+*/
+
 picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     picture_t *pic = malloc(sizeof(*pic));
     int rgbaSize;
@@ -1361,16 +1365,12 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     pic->rgba = malloc(rgbaSize);
     assert(pic->rgba);
     memcpy(pic->rgba, cairo_image_surface_get_data(surface), rgbaSize);
-    pic->id = 0; //**may need to change this in the future, but it works for now**
+    pic->id = 0;
     pic->scaled = 0;
     cairo_destroy (cr);
     cairo_surface_destroy (surface);
     return pic;
 }
-
-/*
- * Graphics and Image drawing
- */
 
 glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
 {
@@ -1399,7 +1399,7 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
 }
 
 void fail(char *msg) {
-    fprintf (stderr, "FAIL: %s\n", msg);
+    fprintf (stderr, "SVG Error: %s\n", msg);
     exit (-1);
 }
 

@@ -1346,7 +1346,7 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     rsvg_set_default_dpi (72.0);
     handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
     if(error != NULL)
-      fail (error->message);     
+        fail (error->message);     
 
     rsvg_handle_get_dimensions (handle, &dim);
     surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);
@@ -1355,7 +1355,7 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     rsvg_handle_render_cairo (handle, cr);
     status = cairo_status (cr);
     if (status)
-	fail (cairo_status_to_string (status));
+	fail (strcat(cairo_status_to_string (status), svg_string));
 
     cairo_surface_flush(surface);
     pic->refcount = 1;
@@ -1381,7 +1381,6 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align)
     char svgFooter [] = "</svg>";
     char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
     picture_t *renderedPic;
-    //glui32 hyperlink;
     window_textbuffer_t *dwin = win->data;
 
     while(svgBodyLen--)
@@ -1393,11 +1392,7 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align)
     strcat(svg, svgFooter);
 
     renderedPic = glk_svg_to_pic(win, svg);
-  //  if (!renderedPic)
-   //   return FALSE;
-   // hyperlink = dwin->owner->attr.hyper;
     win_textbuffer_draw_unscaled_pic(win->data, renderedPic, align);
- //   put_picture(textbufWindow, renderedPic, imagealign_InlineCenter, hyperlink);
     return TRUE;
 }
 

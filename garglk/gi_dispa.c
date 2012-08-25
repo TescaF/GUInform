@@ -527,7 +527,6 @@ char *gidispatch_prototype(glui32 funcnum)
             return "7QaIuIsIsIuIu:Iu";
 	case 0x00E3: /* svg_draw */
 	    return "3QaUIs:";
-	 //   return "2QaU:";
         case 0x00E8: /* window_flow_break */
             return "1Qa:";
         case 0x00E9: /* window_erase_rect */

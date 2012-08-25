@@ -1372,7 +1372,7 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     return pic;
 }
 
-glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
+glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align)
 {
     int svgBodyLen = strlen_uni(svg_string);
     char svgBody[svgBodyLen + 1];
@@ -1381,8 +1381,8 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
     char svgFooter [] = "</svg>";
     char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
     picture_t *renderedPic;
-    glui32 hyperlink;
-    window_textbuffer_t *textbufWindow = win->data;
+    //glui32 hyperlink;
+    window_textbuffer_t *dwin = win->data;
 
     while(svgBodyLen--)
         *svgBodyP++ = *svg_string++;
@@ -1393,9 +1393,12 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
     strcat(svg, svgFooter);
 
     renderedPic = glk_svg_to_pic(win, svg);
-    hyperlink = textbufWindow->owner->attr.hyper;
-    put_picture(textbufWindow, renderedPic, imagealign_InlineCenter, hyperlink);
-    return FALSE;
+  //  if (!renderedPic)
+   //   return FALSE;
+   // hyperlink = dwin->owner->attr.hyper;
+    win_textbuffer_draw_unscaled_pic(win->data, renderedPic, align);
+ //   put_picture(textbufWindow, renderedPic, imagealign_InlineCenter, hyperlink);
+    return TRUE;
 }
 
 void fail(char *msg) {

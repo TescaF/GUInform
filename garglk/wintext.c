@@ -1771,6 +1771,15 @@ glui32 win_textbuffer_draw_picture(window_textbuffer_t *dwin,
     return error;
 }
 
+glui32 win_textbuffer_draw_unscaled_pic(window_textbuffer_t *dwin,
+    picture_t *pic, glui32 align)
+{
+    if (!pic)
+        return FALSE;
+
+    return put_picture(dwin, pic, align, dwin->owner->attr.hyper);
+}
+
 glui32 win_textbuffer_flow_break(window_textbuffer_t *dwin)
 {
     while (dwin->ladjn || dwin->radjn)

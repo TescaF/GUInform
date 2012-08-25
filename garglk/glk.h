@@ -364,7 +364,9 @@ extern glui32 glk_buffer_canon_normalize_uni(glui32 *buf, glui32 len,
 #define imagealign_MarginRight (0x05)
 
 extern glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2);
-extern glui32 glk_svg_draw(winid_t win, glui32* svg_string);
+//extern glui32 glk_svg_draw(winid_t win, glui32* svg_string);
+extern glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align);
+
 extern glui32 glk_svg_to_png(char *svg_string, char *file_name);
 extern glui32 glk_image_draw_scaled(winid_t win, glui32 image,
     glsi32 val1, glsi32 val2, glui32 width, glui32 height);

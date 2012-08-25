@@ -29,7 +29,7 @@
 
 #define mul255(a,b) (((a) * ((b) + 1)) >> 8)
 
-static void
+inline static void
 drawpicture(picture_t *src, window_graphics_t *dst, 
     int x0, int y0, int width, int height, glui32 linkval);
 
@@ -224,6 +224,47 @@ glui32 win_graphics_draw_picture(window_graphics_t *dwin,
 
     return TRUE;
 }
+
+glui32 win_graphics_draw_unscaled_pic(window_graphics_t *dwin,
+    picture_t *pic, glsi32 xpos, glsi32 ypos)
+{
+    if (!pic)
+        return FALSE;
+
+    drawpicture(pic, dwin, xpos, ypos, pic->w, pic->h, dwin->owner->attr.hyper);
+    win_graphics_touch(dwin);
+
+    return TRUE;
+}
+
+/*
+glui32 win_graphics_draw_svg(window_graphics_t *dwin, glui32 *svg_string, glui32 align)
+{
+    int svgBodyLen = strlen_uni(svg_string);
+    char svgBody[svgBodyLen + 1];
+    char *svgBodyP = svgBody;
+    char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
+    char svgFooter [] = "</svg>";
+    char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
+    picture_t *renderedPic;
+    glui32 hyperlink;
+
+    while(svgBodyLen--)
+        *svgBodyP++ = *svg_string++;
+    *svgBodyP++ = '\0';
+
+    strcpy(svg, svgHeader);
+    strcat(svg, svgBody);
+    strcat(svg, svgFooter);
+
+    renderedPic = glk_svg_to_pic(win, svg);
+    if (!pic)
+      return FALSE;
+    hyperlink = dwin->owner->attr.hyper;
+    drawpicture(renderedPic, dwin, align, 0, renderedPic->w, renderedPic->h, hyperlink);
+   // put_picture(dwin, renderedPic, align, hyperlink);
+    return TRUE;
+}*/
 
 void win_graphics_erase_rect(window_graphics_t *dwin, int whole,
     glsi32 x0, glsi32 y0, glui32 width, glui32 height)

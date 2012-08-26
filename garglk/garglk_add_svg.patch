@@ -1,0 +1,156 @@
+diff -Naur old/garglk.h new/garglk.h
+--- garglk.h	2012-10-31 12:02:19.000000000 -0700
++++ garglk.h	2012-11-04 14:20:38.000000000 -0800
+@@ -718,6 +718,7 @@
+ void win_graphics_set_background_color(window_graphics_t *cutwin, glui32 color);
+ 
+ glui32 win_textbuffer_draw_picture(window_textbuffer_t *dwin, glui32 image, glui32 align, glui32 scaled, glui32 width, glui32 height);
++glui32 win_textbuffer_draw_unscaled_pic(window_textbuffer_t *dwin, picture_t *pic, glui32 align);
+ glui32 win_textbuffer_flow_break(window_textbuffer_t *win);
+ 
+ void gli_calc_padding(window_t *win, int *x, int *y);
+diff -Naur old/imgnull.c new/imgnull.c
+--- imgnull.c	2012-10-31 12:02:19.000000000 -0700
++++ imgnull.c	2012-05-21 21:31:20.000000000 -0700
+@@ -33,6 +33,11 @@
+     return FALSE;
+ }
+ 
++glui32 glk_svg_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
++{
++    return FALSE;
++}
++
+ glui32 glk_image_draw_scaled(winid_t win, glui32 image,
+     glsi32 val1, glsi32 val2, glui32 width, glui32 height)
+ {
+diff -Naur old/window.c new/window.c
+--- window.c	2012-10-31 12:02:19.000000000 -0700
++++ window.c	2012-11-04 14:22:33.000000000 -0800
+@@ -21,11 +21,15 @@
+  *                                                                            *
+  *****************************************************************************/
+ 
++#include <assert.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include "glk.h"
+ #include "garglk.h"
++#include <librsvg/rsvg.h>
++#include <librsvg/rsvg-cairo.h>
++#include <cairo.h>
+ 
+ #define LINES 24
+ #define COLS 70
+@@ -1341,8 +1345,80 @@
+ }
+ 
+ /*
+- * Graphics and Image drawing
+- */
++* Graphics and Image drawing
++*/
++
++picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
++    picture_t *pic = malloc(sizeof(*pic));
++    int rgbaSize;
++    unsigned char* color;
++    GError *error = NULL;
++    RsvgHandle *handle;
++    RsvgDimensionData dim;
++    cairo_surface_t *surface;
++    cairo_t *cr;
++    cairo_status_t status;
++    guchar *buf = (guchar*) svg_string;
++
++    assert(pic);
++    g_type_init ();
++    rsvg_set_default_dpi (72.0);
++    handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
++    if(error != NULL)
++        fail (strcat(error->message, svg_string));     
++
++    rsvg_handle_get_dimensions (handle, &dim);
++    surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);
++    cr = cairo_create (surface);
++
++    rsvg_handle_render_cairo (handle, cr);
++    status = cairo_status (cr);
++    if (status)
++	fail (strcat(cairo_status_to_string (status), svg_string));
++
++    cairo_surface_flush(surface);
++    pic->refcount = 1;
++    pic->w = dim.width;
++    pic->h = dim.height;
++    rgbaSize = pic->w * pic->h * 4;
++    pic->rgba = malloc(rgbaSize);
++    assert(pic->rgba);
++    memcpy(pic->rgba, cairo_image_surface_get_data(surface), rgbaSize);
++    pic->id = 0;
++    pic->scaled = 0;
++    cairo_destroy (cr);
++    cairo_surface_destroy (surface);
++    return pic;
++}
++
++glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align)
++{
++    int svgBodyLen = strlen_uni(svg_string);
++    char svgBody[svgBodyLen + 1];
++    char *svgBodyP = svgBody;
++    char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
++    char svgFooter [] = "</svg>";
++    char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
++    picture_t *renderedPic;
++    window_textbuffer_t *dwin = win->data;
++
++    while(svgBodyLen--)
++        *svgBodyP++ = *svg_string++;
++    *svgBodyP++ = '\0';
++
++    strcpy(svg, svgHeader);
++    strcat(svg, svgBody);
++    strcat(svg, svgFooter);
++
++    renderedPic = glk_svg_to_pic(win, svg);
++    win_textbuffer_draw_unscaled_pic(win->data, renderedPic, align);
++    return TRUE;
++}
++
++void fail(char *msg) {
++    fprintf (stderr, "SVG Error: %s\n", msg);
++    exit (-1);
++}
+ 
+ glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
+ {
+diff -Naur old/wintext.c new/wintext.c
+--- wintext.c	2012-10-31 12:02:19.000000000 -0700
++++ wintext.c	2012-08-25 13:09:04.000000000 -0700
+@@ -1706,7 +1706,7 @@
+     touch(dwin, 0);
+ }
+ 
+-static glui32
++static glui32 
+ put_picture(window_textbuffer_t *dwin, picture_t *pic, glui32 align, glui32 linkval)
+ {
+     if (align == imagealign_MarginRight)
+@@ -1774,6 +1774,15 @@
+     return error;
+ }
+ 
++glui32 win_textbuffer_draw_unscaled_pic(window_textbuffer_t *dwin,
++    picture_t *pic, glui32 align)
++{
++    if (!pic)
++        return FALSE;
++
++    return put_picture(dwin, pic, align, dwin->owner->attr.hyper);
++}
++
+ glui32 win_textbuffer_flow_break(window_textbuffer_t *dwin)
+ {
+     while (dwin->ladjn || dwin->radjn)

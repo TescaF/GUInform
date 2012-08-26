@@ -1346,7 +1346,7 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     rsvg_set_default_dpi (72.0);
     handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
     if(error != NULL)
-        fail (error->message);     
+        fail (strcat(error->message, svg_string));     
 
     rsvg_handle_get_dimensions (handle, &dim);
     surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);

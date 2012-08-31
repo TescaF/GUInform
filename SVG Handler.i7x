@@ -1,4 +1,4 @@
-SVG Handler (for Glulx only) by Tesca Fitzgerald begins here.
+GLK SVG Drawing Commands (for Glulx only) by Tesca Fitzgerald begins here.
 "Calls the GLK function to render and display SVG text."
 
 Include (-
@@ -42,10 +42,10 @@ Include (-
 -)
 [ End of contributed section ]
 
-To render (textage - some indexed text) as SVG:
-	(- drawSVG({textage}); -)
+To render (rendered text - some indexed text) as SVG:
+	(- drawSVG({rendered text}); -)
 
-SVG Handler ends here.
+GLK SVG Drawing Commands ends here.
 
 ---- Documentation ----
 
@@ -60,17 +60,20 @@ The indexed text provided to this rule is converted to a GLK c-style string, whi
 Example:  * Shapes - A simple SVG shape drawing
 
 *: "Shapes"
-Include SVG Handler by Tesca Fitzgerald.
+Include SVG Handler by Tesca Fitzgerald
+
+Section - Demo
 
 There is a room called The Starting Room.
 
-To draw a (color - a text) circle:
-	render "<circle cx='100' cy='50' r='40' fill='[color]' />" as SVG.
+Drawing a circle is an action applying to nothing.  Understand "draw a circle" as drawing a circle. 
 
-To draw a rectangle:
-	render "<rect width='100' height='30' x='30' y='40' />" as SVG.
+Drawing a triangle is an action applying to nothing.  Understand "draw a triangle" as drawing a triangle. 
 
-To draw a triangle:
-	render "<polygon points='100,10 10,60 190,60' />" as SVG.
+Carry out drawing a circle: 
+	render "<circle cx='40' cy='40' r='40' fill='green' />" as SVG.
 
-Test me with "draw a red circle / draw a rectangle / draw a triangle".
+Carry out drawing a triangle:
+	render "<polygon points='50,10 10,60 90,60' />" as SVG.
+	
+Test me with "draw a circle / draw a triangle".

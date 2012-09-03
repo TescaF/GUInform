@@ -248,6 +248,7 @@ static gidispatch_function_t function_table[] = {
     { 0x00E1, glk_image_draw, "image_draw" },
     { 0x00E2, glk_image_draw_scaled, "image_draw_scaled" },
     { 0x00E3, glk_svg_draw, "svg_draw" },
+    { 0x00E4, glk_svg_draw_scaled, "svg_draw_scaled" },
     { 0x00E8, glk_window_flow_break, "window_flow_break" },
     { 0x00E9, glk_window_erase_rect, "window_erase_rect" },
     { 0x00EA, glk_window_fill_rect, "window_fill_rect" },
@@ -526,7 +527,9 @@ char *gidispatch_prototype(glui32 funcnum)
         case 0x00E2: /* image_draw_scaled */
             return "7QaIuIsIsIuIu:Iu";
 	case 0x00E3: /* svg_draw */
-	    return "3QaUIs:";
+	    return "4QaUIsIs:";
+        case 0x00E4: /* svg_draw_scaled */
+            return "6QaUIsIsIuIu:";
         case 0x00E8: /* window_flow_break */
             return "1Qa:";
         case 0x00E9: /* window_erase_rect */
@@ -1059,7 +1062,13 @@ void gidispatch_call(glui32 funcnum, glui32 numargs, gluniversal_t *arglist)
         case 0x00E3: /* svg_draw */
             glk_svg_draw(arglist[0].opaqueref,
                 arglist[1].unicharstr,
-                arglist[2].sint);
+                arglist[2].sint, arglist[3].sint);
+            break;
+        case 0x00E4: /* svg_draw_scaled */
+            glk_svg_draw_scaled(arglist[0].opaqueref,
+                arglist[1].unicharstr,
+                arglist[2].sint, arglist[3].sint,
+		arglist[4].uint, arglist[5].uint);
             break;
         case 0x00E8: /* window_flow_break */
             glk_window_flow_break(arglist[0].opaqueref);

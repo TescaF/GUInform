@@ -102,7 +102,10 @@ glui32 glk_gestalt_ext(glui32 id, glui32 val, glui32 *arr,
             if (val == wintype_Graphics)
                 return gli_conf_graphics;
             return FALSE;
-
+	case gestalt_DrawSVG:
+	    if (val == wintype_TextBuffer)
+		return gli_conf_svg;
+	    return FALSE;
         case gestalt_Sound:
         case gestalt_SoundVolume:
         case gestalt_SoundMusic:

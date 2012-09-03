@@ -1378,8 +1378,11 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     return pic;
 }
 
-glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align)
+glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align, glui32 val2)
 {
+    if (!gli_conf_svg)
+        return FALSE;
+
     int svgBodyLen = strlen_uni(svg_string);
     char svgBody[svgBodyLen + 1];
     char *svgBodyP = svgBody;
@@ -1399,6 +1402,33 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align)
 
     renderedPic = glk_svg_to_pic(win, svg);
     win_textbuffer_draw_unscaled_pic(win->data, renderedPic, align);
+    return TRUE;
+}
+
+glui32 glk_svg_draw_scaled(winid_t win, glui32 *svg_string, glui32 align, glui32 val2, glui32 width, glui32 height)
+{
+    if (!gli_conf_svg)
+        return FALSE;
+
+    int svgBodyLen = strlen_uni(svg_string);
+    char svgBody[svgBodyLen + 1];
+    char *svgBodyP = svgBody;
+    char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
+    char svgFooter [] = "</svg>";
+    char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
+    picture_t *renderedPic;
+    window_textbuffer_t *dwin = win->data;
+
+    while(svgBodyLen--)
+        *svgBodyP++ = *svg_string++;
+    *svgBodyP++ = '\0';
+
+    strcpy(svg, svgHeader);
+    strcat(svg, svgBody);
+    strcat(svg, svgFooter);
+
+    renderedPic = glk_svg_to_pic(win, svg);
+    win_textbuffer_draw_picture(win->data, renderedPic, align, TRUE, width, height);
     return TRUE;
 }
 

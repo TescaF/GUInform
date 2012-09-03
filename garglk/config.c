@@ -163,6 +163,7 @@ int gli_conf_spaces = 0;
 int gli_conf_caps = 0;
 
 int gli_conf_graphics = 1;
+int gli_conf_svg = 1;
 int gli_conf_sound = 1;
 int gli_conf_speak = 0;
 
@@ -377,6 +378,8 @@ static void readoneconfig(char *fname, char *argv0, char *gamefile)
 
         if (!strcmp(cmd, "graphics"))
             gli_conf_graphics = atoi(arg);
+        if (!strcmp(cmd, "svg"))
+            gli_conf_svg = atoi(arg);
         if (!strcmp(cmd, "sound"))
             gli_conf_sound = atoi(arg);
         if (!strcmp(cmd, "speak"))

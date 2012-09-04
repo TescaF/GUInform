@@ -33,6 +33,7 @@
 
 #define LINES 24
 #define COLS 70
+#define DEBUG 0
 
 int gli_force_redraw = 1;
 int gli_more_focus = 0;
@@ -1383,6 +1384,9 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align, glui32 val2)
     if (!gli_conf_svg)
         return FALSE;
 
+    if(DEBUG)
+        glk_put_string_uni(svg_string);
+
     int svgBodyLen = strlen_uni(svg_string);
     char svgBody[svgBodyLen + 1];
     char *svgBodyP = svgBody;
@@ -1390,7 +1394,6 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align, glui32 val2)
     char svgFooter [] = "</svg>";
     char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
     picture_t *renderedPic;
-    window_textbuffer_t *dwin = win->data;
 
     while(svgBodyLen--)
         *svgBodyP++ = *svg_string++;
@@ -1399,8 +1402,9 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align, glui32 val2)
     strcpy(svg, svgHeader);
     strcat(svg, svgBody);
     strcat(svg, svgFooter);
-
     renderedPic = glk_svg_to_pic(win, svg);
+    if(renderedPic == NULL)
+	return FALSE;
     win_textbuffer_draw_unscaled_pic(win->data, renderedPic, align);
     return TRUE;
 }
@@ -1409,6 +1413,9 @@ glui32 glk_svg_draw_scaled(winid_t win, glui32 *svg_string, glui32 align, glui32
 {
     if (!gli_conf_svg)
         return FALSE;
+ 
+    if(DEBUG)
+        glk_put_string_uni(svg_string);
 
     int svgBodyLen = strlen_uni(svg_string);
     char svgBody[svgBodyLen + 1];
@@ -1417,7 +1424,6 @@ glui32 glk_svg_draw_scaled(winid_t win, glui32 *svg_string, glui32 align, glui32
     char svgFooter [] = "</svg>";
     char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
     picture_t *renderedPic;
-    window_textbuffer_t *dwin = win->data;
 
     while(svgBodyLen--)
         *svgBodyP++ = *svg_string++;
@@ -1428,6 +1434,8 @@ glui32 glk_svg_draw_scaled(winid_t win, glui32 *svg_string, glui32 align, glui32
     strcat(svg, svgFooter);
 
     renderedPic = glk_svg_to_pic(win, svg);
+    if(renderedPic == NULL)
+        return FALSE;
     win_textbuffer_draw_picture(win->data, renderedPic, align, TRUE, width, height);
     return TRUE;
 }

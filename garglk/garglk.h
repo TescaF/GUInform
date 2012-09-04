@@ -219,6 +219,7 @@ extern int gli_tmarginy;
 extern int gli_conf_lcd;
 
 extern int gli_conf_graphics;
+extern int gli_conf_svg;
 extern int gli_conf_sound;
 extern int gli_conf_speak;
 

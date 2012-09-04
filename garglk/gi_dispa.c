@@ -85,6 +85,7 @@ static gidispatch_intconst_t intconstant_table[] = {
     { "gestalt_SoundMusic", (13) },
     { "gestalt_SoundNotify", (10) },
     { "gestalt_SoundVolume", (9) },
+    { "gestalt_SVG", (21) },
     { "gestalt_Timer", (5) },
     { "gestalt_Unicode", (15) },
     { "gestalt_UnicodeNorm", (16) },

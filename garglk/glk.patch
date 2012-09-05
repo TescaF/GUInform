@@ -1,0 +1,19 @@
+--- stock/garglk/glk.h	2011-10-10 15:12:04.000000000 -0700
++++ garglk-edited/garglk/glk.h	2012-09-03 05:44:29.804137573 -0700
+@@ -89,6 +89,7 @@
+ #define gestalt_LineTerminatorKey (19)
+ #define gestalt_DateTime (20)
+ #define gestalt_Sound2 (21)
++#define gestalt_DrawSVG (22)
+ 
+ #define evtype_None (0)
+ #define evtype_Timer (1)
+@@ -364,6 +365,8 @@
+ #define imagealign_MarginRight (0x05)
+ 
+ extern glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2);
++extern glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align, glui32 val2);
++extern glui32 glk_svg_draw_scaled(winid_t win, glui32 *svg_string, glui32 align, glui32 val2, glui32 width, glui32 height);
+ extern glui32 glk_image_draw_scaled(winid_t win, glui32 image,
+     glsi32 val1, glsi32 val2, glui32 width, glui32 height);
+ extern glui32 glk_image_get_info(glui32 image, glui32 *width, glui32 *height);

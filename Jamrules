@@ -89,7 +89,7 @@ switch $(OS)
         }
         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
         GARGLKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
-        LINKLIBS = -lz -lm -lrt "`$(PKGCONFIG) --libs`" ;
+        LINKLIBS = -lz -lm "`$(PKGCONFIG) --libs`" ;
 
         if $(USESDL) = yes
         {
@@ -103,10 +103,10 @@ switch $(OS)
 
     case IPLINUX :
         Echo "OS is IPLINUX (EFL)" ;
-        PKGCONFIG = "PKG_CONFIG_PATH=/usr/$(IPLINUXARCH)/lib/pkgconfig pkg-config freetype2 fontconfig libkeys libeoi eina-0 evas ecore ecore-x ecore-file ecore-evas edje" ;
+        PKGCONFIG = "PKG_CONFIG_PATH=/usr/$(IPLINUXARCH)/lib/pkgconfig pkg-config freetype2 fontconfig libkeys libeoi eina-0 evas ecore ecore-x ecore-file ecore-evas edje librsvg-2.0 cairo-png" ;
         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
         GARGLKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lm ;
-        LINKLIBS = -lz -lm -lrt "`$(PKGCONFIG) --libs`" ;
+        LINKLIBS = -lz -lm "`$(PKGCONFIG) --libs`" ;
 
         if $(USESDL) = yes
         {
@@ -120,7 +120,7 @@ switch $(OS)
 
     case SOLARIS :
         Echo "OS is SOLARIS (gtk+)" ;
-        PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig" ;
+        PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig librsvg-2.0 cairo-png" ;
         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
         GARGLKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
         LINKLIBS = -lz -lm "`$(PKGCONFIG) --libs`" ;
@@ -140,7 +140,7 @@ switch $(OS)
         SUFDLL = .dylib ;
         MAINARCH = -arch i386 ;
         CCFLAGS = -Wno-pointer-sign $(MAINARCH) $(ALTARCH) ;
-        PKGCONFIG = "pkg-config freetype2" ;
+        PKGCONFIG = "pkg-config freetype2 librsvg-2.0 cairo-png" ;
         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" ;
         SHRLINKLIBS += "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
         LINKLIBS = "`$(PKGCONFIG) --libs`" -lz -lm ;

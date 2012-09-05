@@ -1331,8 +1331,9 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
 */
 
 static void fail(char *msg) {
-    fprintf (stderr, "SVG Error: %s\n", msg);
-    exit (-1);
+    printf ("SVG Error: %s\n", msg);
+    if(!DEBUG)
+        exit (-1);
 }
 
 picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
@@ -1351,8 +1352,10 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
     g_type_init ();
     rsvg_set_default_dpi (72.0);
     handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
-    if(error != NULL)
-        fail (strcat(error->message, svg_string));     
+    if(error != NULL) {
+ 	fail (strcat(error->message, svg_string));     
+	return NULL;
+    }
 
     rsvg_handle_get_dimensions (handle, &dim);
     surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);
@@ -1360,9 +1363,11 @@ picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
 
     rsvg_handle_render_cairo (handle, cr);
     status = cairo_status (cr);
-    if (status)
+    if (status) {
 	fail (strcat((char * const) cairo_status_to_string (status),
                      svg_string));
+	return NULL;
+    }
 
     cairo_surface_flush(surface);
     pic->refcount = 1;
@@ -1392,18 +1397,19 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string, glui32 align, glui32 val2)
     char *svgBodyP = svgBody;
     char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
     char svgFooter [] = "</svg>";
-    char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
+    char svg[strlen(svgHeader) + svgBodyLen + strlen(svgFooter) + 1];
     picture_t *renderedPic;
 
-    while(svgBodyLen--)
+    while(svgBodyLen--) 
         *svgBodyP++ = *svg_string++;
     *svgBodyP++ = '\0';
 
     strcpy(svg, svgHeader);
     strcat(svg, svgBody);
     strcat(svg, svgFooter);
+
     renderedPic = glk_svg_to_pic(win, svg);
-    if(renderedPic == NULL)
+    if(renderedPic == NULL) 
 	return FALSE;
     win_textbuffer_draw_unscaled_pic(win->data, renderedPic, align);
     return TRUE;
@@ -1422,7 +1428,7 @@ glui32 glk_svg_draw_scaled(winid_t win, glui32 *svg_string, glui32 align, glui32
     char *svgBodyP = svgBody;
     char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
     char svgFooter [] = "</svg>";
-    char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
+    char svg[strlen(svgHeader) + svgBodyLen + strlen(svgFooter) + 1];
     picture_t *renderedPic;
 
     while(svgBodyLen--)

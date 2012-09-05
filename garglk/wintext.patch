@@ -1,0 +1,18 @@
+--- stock/garglk/wintext.c	2011-10-06 10:49:28.000000000 -0700
++++ garglk-edited/garglk/wintext.c	2012-09-04 13:54:57.749799891 -0700
+@@ -1769,6 +1774,15 @@
+     return error;
+ }
+ 
++glui32 win_textbuffer_draw_unscaled_pic(window_textbuffer_t *dwin,
++    picture_t *pic, glui32 align)
++{
++    if (!pic)
++        return FALSE;
++
++    return put_picture(dwin, pic, align, dwin->owner->attr.hyper);
++}
++
+ glui32 win_textbuffer_flow_break(window_textbuffer_t *dwin)
+ {
+     while (dwin->ladjn || dwin->radjn)

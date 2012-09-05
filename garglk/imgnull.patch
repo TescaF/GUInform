@@ -1,0 +1,14 @@
+--- stock/garglk/imgnull.c	2011-07-13 09:22:26.000000000 -0700
++++ garglk-edited/garglk/imgnull.c	2012-05-21 21:31:20.144739918 -0700
+@@ -33,6 +33,11 @@
+     return FALSE;
+ }
+ 
++glui32 glk_svg_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
++{
++    return FALSE;
++}
++
+ glui32 glk_image_draw_scaled(winid_t win, glui32 image,
+     glsi32 val1, glsi32 val2, glui32 width, glui32 height)
+ {

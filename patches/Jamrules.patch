@@ -1,0 +1,41 @@
+--- stock/Jamrules	2011-07-13 09:22:30.000000000 -0700
++++ garglk-edited/Jamrules	2012-09-05 11:00:39.280266404 -0700
+@@ -83,9 +83,9 @@
+     case LINUX :
+         Echo "OS is LINUX ($(GUILIB))" ;
+         if $(GUILIB) = EFL {
+-            PKGCONFIG = "pkg-config freetype2 evas ecore ecore-evas elementary fontconfig" ;
++            PKGCONFIG = "pkg-config freetype2 evas ecore ecore-evas elementary fontconfig librsvg-2.0 cairo-png" ;
+         } else {
+-            PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig" ;
++            PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig librsvg-2.0 cairo-png" ;
+         }
+         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
+         GARGLKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
+@@ -103,7 +103,7 @@
+ 
+     case IPLINUX :
+         Echo "OS is IPLINUX (EFL)" ;
+-        PKGCONFIG = "PKG_CONFIG_PATH=/usr/$(IPLINUXARCH)/lib/pkgconfig pkg-config freetype2 fontconfig libkeys libeoi eina-0 evas ecore ecore-x ecore-file ecore-evas edje" ;
++        PKGCONFIG = "PKG_CONFIG_PATH=/usr/$(IPLINUXARCH)/lib/pkgconfig pkg-config freetype2 fontconfig libkeys libeoi eina-0 evas ecore ecore-x ecore-file ecore-evas edje librsvg-2.0 cairo-png" ;
+         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
+         GARGLKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lm ;
+         LINKLIBS = -lz -lm "`$(PKGCONFIG) --libs`" ;
+@@ -120,7 +120,7 @@
+ 
+     case SOLARIS :
+         Echo "OS is SOLARIS (gtk+)" ;
+-        PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig" ;
++        PKGCONFIG = "pkg-config freetype2 gtk+-x11-2.0 gdk-x11-2.0 gobject-2.0 glib-2.0 fontconfig librsvg-2.0 cairo-png" ;
+         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
+         GARGLKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
+         LINKLIBS = -lz -lm "`$(PKGCONFIG) --libs`" ;
+@@ -140,7 +140,7 @@
+         SUFDLL = .dylib ;
+         MAINARCH = -arch i386 ;
+         CCFLAGS = -Wno-pointer-sign $(MAINARCH) $(ALTARCH) ;
+-        PKGCONFIG = "pkg-config freetype2" ;
++        PKGCONFIG = "pkg-config freetype2 librsvg-2.0 cairo-png" ;
+         GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" ;
+         SHRLINKLIBS += "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
+         LINKLIBS = "`$(PKGCONFIG) --libs`" -lz -lm ;

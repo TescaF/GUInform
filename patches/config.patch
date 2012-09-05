@@ -1,0 +1,19 @@
+--- stock/garglk/config.c	2012-09-05 10:41:31.972289740 -0700
++++ garglk-edited/garglk/config.c	2012-09-05 10:40:57.352290492 -0700
+@@ -162,6 +162,7 @@
+ int gli_conf_caps = 0;
+ 
+ int gli_conf_graphics = 1;
++int gli_conf_svg = 1;
+ int gli_conf_sound = 1;
+ int gli_conf_speak = 0;
+ 
+@@ -374,6 +377,8 @@
+ 
+         if (!strcmp(cmd, "graphics"))
+             gli_conf_graphics = atoi(arg);
++        if (!strcmp(cmd, "svg"))
++            gli_conf_svg = atoi(arg);
+         if (!strcmp(cmd, "sound"))
+             gli_conf_sound = atoi(arg);
+         if (!strcmp(cmd, "speak"))

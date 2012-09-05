@@ -1,0 +1,1 @@
+This is a modification of the garglk implementation of the glk specifications. This version provides support for the rendering of SVG strings and displays the resulting image in the interactive console. 

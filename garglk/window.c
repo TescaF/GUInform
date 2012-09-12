@@ -21,6 +21,7 @@
  *                                                                            *
  *****************************************************************************/
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -32,14 +33,6 @@
 
 #define LINES 24
 #define COLS 70
-
-typedef struct bitmap_s bitmap_t;
-
-struct bitmap_s
-{
-    int w, h, lsb, top, pitch;
-    unsigned char *data;
-};
 
 int gli_force_redraw = 1;
 int gli_more_focus = 0;
@@ -1332,6 +1325,52 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
     }
 }
 
+picture_t *glk_svg_to_pic(winid_t win, char *svg_string) {
+    picture_t *pic = malloc(sizeof(*pic));
+    int rgbaSize;
+    unsigned char* color;
+    GError *error = NULL;
+    RsvgHandle *handle;
+    RsvgDimensionData dim;
+    cairo_surface_t *surface;
+    cairo_t *cr;
+    cairo_status_t status;
+    guchar *buf = (guchar*) svg_string;
+
+    assert(pic);
+    g_type_init ();
+    rsvg_set_default_dpi (72.0);
+    handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
+    if(error != NULL)
+      fail (error->message);     
+
+    rsvg_handle_get_dimensions (handle, &dim);
+    surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);
+    cr = cairo_create (surface);
+
+    rsvg_handle_render_cairo (handle, cr);
+    status = cairo_status (cr);
+    if (status)
+	fail (cairo_status_to_string (status));
+
+    cairo_surface_flush(surface);
+    pic->refcount = 1;
+    pic->w = dim.width;
+    pic->h = dim.height;
+    rgbaSize = pic->w * pic->h * 4;
+    pic->rgba = malloc(rgbaSize);
+    assert(pic->rgba);
+    memcpy(pic->rgba, cairo_image_surface_get_data(surface), rgbaSize);
+#if 0
+    draw_bitmap_lcd(&rendered_bitmap, 0, 0, gli_window_color);
+#endif
+    pic->id = 0;   // XXX Is this OK?
+    pic->scaled = 0;
+    cairo_destroy (cr);
+    cairo_surface_destroy (surface);
+    return pic;
+}
+
 /*
  * Graphics and Image drawing
  */
@@ -1349,65 +1388,19 @@ glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
         *svgBodyP++ = *svg_string++;
     *svgBodyP++ = '\0';
 
-    printf("svg body: %s (%d)\n", svgBody, strlen(svgBody));
     strcpy(svg, svgHeader);
     strcat(svg, svgBody);
     strcat(svg, svgFooter);
-    printf("passed text to GLK function: %s\n", svg);
-#ifdef RENDER_SVG
-    //I'll change the line below to a relative path once I know where the file needs to go
-    glk_svg_to_png(svg, "/home/tesca/Documents/ThesisProject/guinform-svg/svg_result.png");
-#endif
+    /* pic = */ glk_svg_to_pic(win, svg);
+    // Now we take the pic returned by the call above (not shown)
+    // and render it (also not shown).
     return FALSE;
 }
 
-#ifdef RENDER_SVG
 void fail(char *msg) {
     fprintf (stderr, "FAIL: %s\n", msg);
     exit (-1);
 }
-
-void glk_svg_to_png(char *svg_string, char *file_name) {
-    bitmap_t rendered_bitmap;
-    unsigned char* color;
-    GError *error = NULL;
-    RsvgHandle *handle;
-    RsvgDimensionData dim;
-    cairo_surface_t *surface;
-    cairo_t *cr;
-    cairo_status_t status;
-    guchar *buf = (guchar*) svg_string;
-
-    g_type_init ();
-    rsvg_set_default_dpi (72.0);
-    handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
-    if(error != NULL)
-      fail (error->message);     
-
-    rsvg_handle_get_dimensions (handle, &dim);
-    surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);
-    cr = cairo_create (surface);
-
-    rsvg_handle_render_cairo (handle, cr);
-    status = cairo_status (cr);
-    if (status)
-	fail (cairo_status_to_string (status));
-
-    cairo_surface_flush(surface);
-    rendered_bitmap.lsb = 0;
-    rendered_bitmap.top = 0;
-    rendered_bitmap.w = dim.width;
-    rendered_bitmap.h = dim.height;
-    rendered_bitmap.pitch = 0;
-    rendered_bitmap.data = cairo_image_surface_get_data(surface);
-    printf("before draw_bitmap call\n");
-    draw_bitmap_lcd(&rendered_bitmap, 0, 0, gli_window_color);
-    printf("after draw_bitmap call\n");
-    cairo_surface_write_to_png (surface, file_name);
-    cairo_destroy (cr);
-    cairo_surface_destroy (surface);
-}
-#endif
 
 glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
 {

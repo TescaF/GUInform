@@ -500,7 +500,9 @@ void draw_bitmap(bitmap_t *b, int x, int y, unsigned char *rgb)
 void draw_bitmap_lcd(bitmap_t *b, int x, int y, unsigned char *rgb)
 {
     int i, j, k;
+#ifdef DEBUG_BITMAP
     printf("bitmap: %u  x: %i  y: %i\n", b->data, x, y);
+#endif
     for (k = 0; k < b->h; k++)
     {
         for (i = 0, j = 0; i < b->w; i += 3, j ++)

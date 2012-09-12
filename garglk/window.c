@@ -1338,28 +1338,36 @@ void glk_window_move_cursor(window_t *win, glui32 xpos, glui32 ypos)
 
 glui32 glk_svg_draw(winid_t win, glui32 *svg_string)
 {
-    glui32 *ch;
-    int lx;
-    int len = strlen_uni(svg_string);
+    int svgBodyLen = strlen_uni(svg_string);
+    char svgBody[svgBodyLen + 1];
+    char *svgBodyP = svgBody;
     char svgHeader [] = "<?xml version='1.0' standalone='no'?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.2//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg xmlns='http://www.w3.org/2000/svg' version='1.1'>";
     char svgFooter [] = "</svg>";
-    char cstr[len + 1];
-    char finalStr[len + strlen(svgHeader) + strlen(svgFooter)];
+    char svg[strlen(svgHeader) + strlen(svgBody) + strlen(svgFooter) + 1];
 
-    strcpy(finalStr, svgHeader);
-    for (lx=0, ch=svg_string; lx<len; lx++, ch++)
- 	cstr[lx] = *ch;
-    cstr[lx + 1] = '\0';
-    strcat(finalStr, cstr);
-    strcat(finalStr, svgFooter);
-    printf("passed text to GLK function: %s\n", finalStr);
+    while(svgBodyLen--)
+        *svgBodyP++ = *svg_string++;
+    *svgBodyP++ = '\0';
+
+    printf("svg body: %s (%d)\n", svgBody, strlen(svgBody));
+    strcpy(svg, svgHeader);
+    strcat(svg, svgBody);
+    strcat(svg, svgFooter);
+    printf("passed text to GLK function: %s\n", svg);
+#ifdef RENDER_SVG
     //I'll change the line below to a relative path once I know where the file needs to go
-    glk_svg_to_png(finalStr, "/home/tesca/Documents/ThesisProject/guinform-svg/svg_result.png");
+    glk_svg_to_png(svg, "/home/tesca/Documents/ThesisProject/guinform-svg/svg_result.png");
+#endif
+    return FALSE;
 }
-#define FAIL(msg)							\
-    do { fprintf (stderr, "FAIL: %s\n", msg); exit (-1); } while (0)
 
-glui32 glk_svg_to_png(char *svg_string, char *file_name) {
+#ifdef RENDER_SVG
+void fail(char *msg) {
+    fprintf (stderr, "FAIL: %s\n", msg);
+    exit (-1);
+}
+
+void glk_svg_to_png(char *svg_string, char *file_name) {
     bitmap_t rendered_bitmap;
     unsigned char* color;
     GError *error = NULL;
@@ -1374,7 +1382,7 @@ glui32 glk_svg_to_png(char *svg_string, char *file_name) {
     rsvg_set_default_dpi (72.0);
     handle = rsvg_handle_new_from_data (buf, strlen(svg_string), &error);
     if(error != NULL)
-      FAIL (error->message);     
+      fail (error->message);     
 
     rsvg_handle_get_dimensions (handle, &dim);
     surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, dim.width, dim.height);
@@ -1383,7 +1391,7 @@ glui32 glk_svg_to_png(char *svg_string, char *file_name) {
     rsvg_handle_render_cairo (handle, cr);
     status = cairo_status (cr);
     if (status)
-	FAIL (cairo_status_to_string (status));
+	fail (cairo_status_to_string (status));
 
     cairo_surface_flush(surface);
     rendered_bitmap.lsb = 0;
@@ -1398,8 +1406,8 @@ glui32 glk_svg_to_png(char *svg_string, char *file_name) {
     cairo_surface_write_to_png (surface, file_name);
     cairo_destroy (cr);
     cairo_surface_destroy (surface);
-    return FALSE;
 }
+#endif
 
 glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2)
 {

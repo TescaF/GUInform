@@ -1,0 +1,254 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Glk API Specification: 7. Graphics</title>
+</head><body>
+<h2><a name="beg">7: Graphics</a></h2>
+<p>
+
+In accordance with this modern age, Glk provides for a modicum of graphical flair. It does <em>not</em> attempt to be a complete graphical toolkit. Those already exist. Glk strikes the usual uncomfortable balance between power, portability, and ease of implementation: commands for arranging pre-supplied images on the screen and intermixed with text.
+<p>
+
+Graphics is an optional capability in Glk; not all libraries support graphics. This should not be a surprise.
+<p>
+
+<h3><a name="s.1">7.1: Image Resources</a></h3>
+<p>
+
+Most of the graphics commands in Glk deal with image resources. Your program does not have to worry about how images are stored. Everything is a resource, and a resource is referred to by an integer identifier. You may, for example, call a function to display image number 17. The format, loading, and displaying of that image is entirely up to the Glk library for the platform in question.
+<p>
+
+Of course, it is also desirable to have a platform-independent way to store sounds and images. Blorb is the official resource-storage format of Glk. A Glk library does not have to understand Blorb, but it is more likely to understand Blorb than any other format.
+<p>
+
+[Glk does not specify the exact format of images, but Blorb does. Images in a Blorb archive must be PNG or JPEG files. More formats may be added if real-world experience shows it to be desirable. However, that is in the domain of the Blorb specification. The Glk spec, and Glk programming, will not change.]
+<p>
+
+At present, images can only be drawn in graphics windows and text buffer windows. In fact, a library may not implement both of these possibilities. You should test each with the gestalt_DrawImage selector if you plan to use it. See <a href="#s.5">section 7.5, "Testing for Graphics Capabilities"</a>.
+<p>
+
+<pre>
+glui32 glk_image_get_info(glui32 image, glui32 *width, glui32 *height);
+</pre>
+
+<p>
+
+This gets information about the image resource with the given identifier. It returns TRUE (1) if there is such an image, and FALSE (0) if not. You can also pass pointers to width and height variables; if the image exists, the variables will be filled in with the width and height of the image, in pixels. (You can pass NULL for either width or height if you don't care about that information.)
+<p>
+
+[You should always use this function to measure the size of images when you are creating your display. Do this even if you created the images, and you know how big they "should" be. This is because images may be scaled in translating from one platform to another, or even from one machine to another. A Glk library might display all images larger than their original size, because of screen resolution or player preference. Images will be scaled proportionally, but you still need to call glk_image_get_info() to determine their absolute size.]
+<p>
+
+<pre>
+glui32 glk_image_draw(winid_t win, glui32 image, glsi32 val1, glsi32 val2);
+</pre>
+
+<p>
+
+This draws the given image resource in the given window. The position of the image is given by val1 and val2, but their meaning varies depending on what kind of window you are drawing in. See <a href="#s.2">section 7.2, "Graphics in Graphics Windows"</a> and <a href="#s.3">section 7.3, "Graphics in Text Buffer Windows"</a>.
+<p>
+
+This function returns a flag indicating whether the drawing operation succeeded. [A FALSE result can occur for many reasons. The image data might be corrupted; the library may not have enough memory to operate; there may be no image with the given identifier; the window might not support image display; and so on.]
+<p>
+
+<pre>
+glui32 glk_image_draw_scaled(winid_t win, glui32 image, glsi32 val1, glsi32 val2, glui32 width, glui32 height);
+</pre>
+
+<p>
+
+This is similar to glk_image_draw(), but it scales the image to the given width and height, instead of using the image's standard size. (You can measure the standard size with glk_image_get_info().)
+<p>
+
+If width or height is zero, nothing is drawn. Since those arguments are unsigned integers, they cannot be negative. If you pass in a negative number, it will be interpreted as a very large positive number, which is almost certain to end badly.
+<p>
+
+<h3><a name="s.2">7.2: Graphics in Graphics Windows</a></h3>
+<p>
+
+A graphics window is a rectangular canvas of pixels, upon which you can draw images. The contents are entirely under your control. You can draw as many images as you like, at any positions -- overlapping if you like. If the window is resized, you are responsible for redrawing everything. See <a href="glk-spec-074_3.html#s.5.5">section 3.5.5, "Graphics Windows"</a>.
+<p>
+
+If you call glk_image_draw() or glk_image_draw_scaled() in a graphics window, val1 and val2 are interpreted as X and Y coordinates. The image will be drawn with its upper left corner at this position.
+<p>
+
+It is legitimate for part of the image to fall outside the window; the excess is not drawn. Note that these are signed arguments, so you can draw an image which falls outside the left or top edge of the window, as well as the right or bottom.
+<p>
+
+There are a few other commands which apply to graphics windows:
+<p>
+
+<pre>
+void glk_window_set_background_color(winid_t win, glui32 color);
+</pre>
+
+<p>
+
+This sets the window's background color. It does <em>not</em> change what is currently displayed; it only affects subsequent clears and resizes. The initial background color of each window is white.
+<p>
+
+Colors are encoded in a 32-bit value: the top 8 bits must be zero, the next 8 bits are the red value, the next 8 bits are the green value, and the bottom 8 bits are the blue value. Color values range from 0 to 255. [So 0x00000000 is black, 0x00FFFFFF is white, and 0x00FF0000 is bright red.]
+<p>
+
+[This function may only be used with graphics windows. To set background colors in a text window, use text styles with color hints; see <a href="glk-spec-074_5.html#s.5">section 5.5, "Styles"</a>.]
+<p>
+
+<pre>
+void glk_window_fill_rect(winid_t win, glui32 color, glsi32 left, glsi32 top, glui32 width, glui32 height);
+</pre>
+
+<p>
+
+This fills the given rectangle with the given color. It is legitimate for part of the rectangle to fall outside the window. If width or height is zero, nothing is drawn.
+<p>
+
+<pre>
+void glk_window_erase_rect(winid_t win, glsi32 left, glsi32 top, glui32 width, glui32 height);
+</pre>
+
+<p>
+
+This fills the given rectangle with the window's background color.
+<p>
+
+You can also fill an entire graphics window with its background color by calling glk_window_clear().
+<p>
+
+[Note that graphics windows do not support a full set of object-drawing commands, nor can you draw text in them. That may be available in a future Glk extension. For now, it seems reasonable to limit the task to a single primitive, the drawing of a raster image. And then there's the ability to fill a rectangle with a solid color -- a small extension, and hopefully no additional work for the library, since it can already clear with arbitrary background colors. In fact, if glk_window_fill_rect() did not exist, an author could invent it -- by briefly setting the background color, erasing a rectangle, and restoring.]
+<p>
+
+<h3><a name="s.3">7.3: Graphics in Text Buffer Windows</a></h3>
+<p>
+
+A text buffer is a linear text stream. You can draw images in-line with this text. If you are familiar with HTML, you already understand this model. You draw images with flags indicating alignment. The library takes care of scrolling, resizing, and reformatting text buffer windows.
+<p>
+
+If you call glk_image_draw() or glk_image_draw_scaled() in a text buffer window, val1 gives the image alignment. The val2 argument is currently unused, and should always be zero.
+<p>
+
+<ul>
+<li>imagealign_InlineUp: The image appears at the current point in the text, sticking up. That is, the bottom edge of the image is aligned with the baseline of the line of text.
+<li>imagealign_InlineDown: The image appears at the current point, and the top edge is aligned with the top of the line of text.
+<li>imagealign_InlineCenter: The image appears at the current point, and it is centered between the top and baseline of the line of text. If the image is taller than the line of text, it will stick up and down equally.
+<li>imagealign_MarginLeft: The image appears in the left margin. Subsequent text will be displayed to the right of the image, and will flow around it -- that is, it will be left-indented for as many lines as it takes to pass the image.
+<li>imagealign_MarginRight: The image appears in the right margin, and subsequent text will flow around it on the left.
+</ul>
+
+<p>
+
+The two "margin" alignments require some care. To allow proper positioning, images using imagealign_MarginLeft and imagealign_MarginRight <em>must</em> be placed at the beginning of a line. That is, you may only call glk_image_draw() (with these two alignments) in a window, if you have just printed a newline to the window's stream, or if the window is entirely empty. If you margin-align an image in a line where text has already appeared, no image will appear at all.
+<p>
+
+Inline-aligned images count as "text" for the purpose of this rule.
+<p>
+
+You may have images in both margins at the same time.
+<p>
+
+It is also legal to have more than one image in the <em>same</em> margin (left or right.) However, this is not recommended. It is difficult to predict how text will wrap in that situation, and libraries may err on the side of conservatism.
+<p>
+
+You may wish to "break" the stream of text down below the current margin image. Since lines of text can be in any font and size, you cannot do this by counting newlines. Instead, use this function:
+<p>
+
+<pre>
+void glk_window_flow_break(winid_t win);
+</pre>
+
+<p>
+
+If the current point in the text is indented around a margin-aligned image, this acts like the correct number of newlines to start a new line below the image. (If there are several margin-aligned images, it goes below all of them.) If the current point is <em>not</em> beside a margin-aligned image, this call has no effect.
+<p>
+
+When a text buffer window is resized, a flow-break behaves cleverly; it may become active or inactive as necessary. You can consider this function to insert an invisible mark in the text stream. The mark works out how many newlines it needs to be whenever the text is formatted for display.
+<p>
+
+An example of the use of glk_window_flow_break(): If you display a left-margin image at the start of every line, they can stack up in a strange diagonal way that eventually squeezes all the text off the screen. [If you can't picture this, draw some diagrams. Make the margin images more than one line tall, so that each line starts already indented around the last image.] To avoid this problem, call glk_window_flow_break() immediately before glk_image_draw() for every margin-aligned image.
+<p>
+
+In all windows other than text buffers, glk_window_flow_break() has no effect.
+<p>
+
+<h3><a name="s.4">7.4: SVG Graphics</a></h3>
+<p>
+
+Scalar Vector Graphics (SVG) drawings are supported by some interactive fiction systems. SVG is drawn in the text buffer just as an image would be displayed, and is therefore drawn in-line. 
+<p>
+
+SVG can be drawn in a text buffer window by calling glk_svg_draw() or glk_svg_draw_scaled(). The align argument provides the SVG image alignment. See <a href="#s.3">section 7.3, "Graphics in Text Buffer Windows"</a> for image alignment parameters, descriptions, and usage. The val2 argument is currently unused, and should always be zero. 
+
+<p>
+
+The svg_string argument is the image's SVG description that will be rendered. This description should be in the form of a C-style string. The result of this rendering will be displayed in the text buffer window. 
+
+<p>
+When calling glk_svg_draw_scaled(), the width and height parameters should dictate the SVG image's size after being scaled.
+<p>
+
+<h3><a name="s.5">7.5: Testing for Graphics Capabilities</a></h3>
+<p>
+
+Before calling Glk graphics functions, you should use the following gestalt selectors.
+
+<pre>
+glui32 res;
+res = glk_gestalt(gestalt_Graphics, 0);
+
+</pre>
+
+<p>
+
+This returns 1 if the overall suite of graphics functions (excluding SVG capabilities) is available. This includes glk_image_draw(), glk_image_draw_scaled(), glk_image_get_info(), glk_window_erase_rect(), glk_window_fill_rect(), glk_window_set_background_color(), and glk_window_flow_break(). It also includes the capability to create graphics windows.
+<p>
+
+You can check for SVG capabilities using the following gestalt selector.
+
+<pre>
+glui32 res;
+res = glk_gestalt(gestalt_SVG, 0);
+
+</pre>
+
+<p>
+
+This returns 1 if SVG capabilities are available in the interactive fiction library.
+<p>
+
+If any of the above selectors returns 0, you should not try to call these functions. They may have no effect, or they may cause a run-time error. If you try to create a graphics window, you will get NULL.
+<p>
+
+If you are writing a C program, there is an additional complication. A library which does not support graphics may not implement the graphics functions at all. Even if you put gestalt tests around your graphics calls, you may get link-time errors. If the glk.h file is so old that it does not declare the graphics functions and constants, you may even get compile-time errors.
+<p>
+
+To avoid this, you can perform a preprocessor test for the existence of GLK_MODULE_IMAGE. If this is defined, so are all the functions and constants described in this section. If not, not.
+<p>
+
+[To be extremely specific, there are two ways this can happen. If the glk.h file that comes with the library is too old to have the graphics declarations in it, it will of course lack GLK_MODULE_IMAGE as well. If the glk.h file is recent, but the library is old, the definition of GLK_MODULE_IMAGE should be removed from glk.h, to avoid link errors. This is not a great solution. A better one is for the library to implement the graphics functions as stubs that do nothing (or cause run-time errors). Since no program will call the stubs without testing gestalt_Graphics, this is sufficient.]
+<p>
+
+<pre>
+res = glk_gestalt(gestalt_DrawImage, windowtype);
+
+</pre>
+
+<p>
+
+This returns 1 if images can be drawn in windows of the given type. If it returns 0, glk_image_draw() will fail and return FALSE (0). You should test wintype_Graphics and wintype_TextBuffer separately, since libraries may implement both, neither, or only one.
+<p>
+
+<pre>
+res = glk_gestalt(gestalt_GraphicsTransparency, 0);
+
+</pre>
+
+<p>
+
+This returns 1 if images with alpha channels can actually be drawn with the appropriate degree of transparency. If it returns 0, the alpha channel is ignored; fully transparent areas will be drawn in an implementation-defined color. [The JPEG format does not support transparency or alpha channels; the PNG format does.]
+<p>
+
+
+<hr>
+<em><a href="glk-spec-074.html">Up to top</a>
+<a href="glk-spec-074_6.html">Previous chapter</a>
+<a href="glk-spec-074_8.html">Next chapter</a>
+</em>
+</body></html>

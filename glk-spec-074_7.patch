@@ -1,0 +1,67 @@
+--- glk-spec-074_7_original.html	2012-09-03 11:32:40.000000000 -0700
++++ glk-spec-074_7.html	2013-03-24 16:07:37.000000000 -0700
+@@ -23,7 +23,7 @@
+ [Glk does not specify the exact format of images, but Blorb does. Images in a Blorb archive must be PNG or JPEG files. More formats may be added if real-world experience shows it to be desirable. However, that is in the domain of the Blorb specification. The Glk spec, and Glk programming, will not change.]
+ <p>
+ 
+-At present, images can only be drawn in graphics windows and text buffer windows. In fact, a library may not implement both of these possibilities. You should test each with the gestalt_DrawImage selector if you plan to use it. See <a href="#s.4">section 7.4, "Testing for Graphics Capabilities"</a>.
++At present, images can only be drawn in graphics windows and text buffer windows. In fact, a library may not implement both of these possibilities. You should test each with the gestalt_DrawImage selector if you plan to use it. See <a href="#s.5">section 7.5, "Testing for Graphics Capabilities"</a>.
+ <p>
+ 
+ <pre>
+@@ -168,12 +168,27 @@
+ In all windows other than text buffers, glk_window_flow_break() has no effect.
+ <p>
+ 
+-<h3><a name="s.4">7.4: Testing for Graphics Capabilities</a></h3>
++<h3><a name="s.4">7.4: SVG Graphics</a></h3>
+ <p>
+ 
+-Before calling Glk graphics functions, you should use the following gestalt selectors.
++Scalar Vector Graphics (SVG) drawings are supported by some interactive fiction systems. SVG is drawn in the text buffer just as an image would be displayed, and is therefore drawn in-line. 
++<p>
++
++SVG can be drawn in a text buffer window by calling glk_svg_draw() or glk_svg_draw_scaled(). The align argument provides the SVG image alignment. See <a href="#s.3">section 7.3, "Graphics in Text Buffer Windows"</a> for image alignment parameters, descriptions, and usage. The val2 argument is currently unused, and should always be zero. 
++
+ <p>
+ 
++The svg_string argument is the image's SVG description that will be rendered. This description should be in the form of a C-style string. The result of this rendering will be displayed in the text buffer window. 
++
++<p>
++When calling glk_svg_draw_scaled(), the width and height parameters should dictate the SVG image's size after being scaled.
++<p>
++
++<h3><a name="s.5">7.5: Testing for Graphics Capabilities</a></h3>
++<p>
++
++Before calling Glk graphics functions, you should use the following gestalt selectors.
++
+ <pre>
+ glui32 res;
+ res = glk_gestalt(gestalt_Graphics, 0);
+@@ -182,10 +197,23 @@
+ 
+ <p>
+ 
+-This returns 1 if the overall suite of graphics functions is available. This includes glk_image_draw(), glk_image_draw_scaled(), glk_image_get_info(), glk_window_erase_rect(), glk_window_fill_rect(), glk_window_set_background_color(), and glk_window_flow_break(). It also includes the capability to create graphics windows.
++This returns 1 if the overall suite of graphics functions (excluding SVG capabilities) is available. This includes glk_image_draw(), glk_image_draw_scaled(), glk_image_get_info(), glk_window_erase_rect(), glk_window_fill_rect(), glk_window_set_background_color(), and glk_window_flow_break(). It also includes the capability to create graphics windows.
++<p>
++
++You can check for SVG capabilities using the following gestalt selector.
++
++<pre>
++glui32 res;
++res = glk_gestalt(gestalt_SVG, 0);
++
++</pre>
++
++<p>
++
++This returns 1 if SVG capabilities are available in the interactive fiction library.
+ <p>
+ 
+-If this selector returns 0, you should not try to call these functions. They may have no effect, or they may cause a run-time error. If you try to create a graphics window, you will get NULL.
++If any of the above selectors returns 0, you should not try to call these functions. They may have no effect, or they may cause a run-time error. If you try to create a graphics window, you will get NULL.
+ <p>
+ 
+ If you are writing a C program, there is an additional complication. A library which does not support graphics may not implement the graphics functions at all. Even if you put gestalt tests around your graphics calls, you may get link-time errors. If the glk.h file is so old that it does not declare the graphics functions and constants, you may even get compile-time errors.
